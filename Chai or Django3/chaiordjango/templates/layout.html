@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>
+        {% block title %}
+        Default value 
+        {% endblock  %}
+    </title>
+</head>
+<body>
+    {% comment %} {% load static %} {% endcomment %}
+    <nav>
+       <h1> this is our navbar</h1>
+    </nav>
+    {% block content %}
+
+    {% endblock  %}
+    {% comment %} <footer></footer> {% endcomment %}
+
+</body>
+</html>
