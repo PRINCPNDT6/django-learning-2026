@@ -4,6 +4,12 @@ body{
 
 }
 
+.chai-item{
+    margin: 20px;
+    padding: 20px;
+    height: 200px;
+    width: 300px;
+}
 h1{
     text-align: center;
     font-size: 2rem;

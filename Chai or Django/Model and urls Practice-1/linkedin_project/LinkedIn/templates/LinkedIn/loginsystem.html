@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Linked App
+
+{% endblock  %}
+
+{% block content %}
+
+<h1>Login System</h1>
+
+{% for info in loginInformations %}
+Name: {{info.name}}
+<a href="{% url 'login_details' info.id %}">
+    <button>{{info.name}} - {{info.id}}</button>
+</a>
+{% comment %} Email: {{info.email}} {% endcomment %}
+{% endfor %}
+
+
+
+{% endblock  %}
