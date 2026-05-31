@@ -14,3 +14,5 @@ def chai_details(request, chai_id):
         'chai': chai_detail
     })
  
+def OnePage(request):
+    return render(request, 'chai/One.html')

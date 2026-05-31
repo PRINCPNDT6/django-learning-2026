@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+    All Card
+{% endblock  %}
+
+{% block content %}
+<h1>test</h1>
+    {% for data in allcards %}
+    
+        <div class = 'Card'>
+
+           <div class = 'img-div'>
+             {{data.image}}
+           </div>
+          <h2> Name: {{data.Name}}</h2>
+          <h2>RollNo: {{data.RollNo}}</h2>
+           <a href="{% url 'cardInfo' data.id %}">
+
+            <button>Read More</button>
+           </a>
+           
+           {{data.id}}
+        </div>
+
+    {% endfor %}
+{% endblock  %}
