@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}
+Blog-
+{% endblock  %}
+
+{% block content %}
+<h1>All Good</h1>
+
+{% comment %} {% for item in  data %} {% endcomment %}
+   <h2>Name: {{name}}</h2>
+   <h2>Age: {{age}}</h2>
+
+   {% comment %} List Access {% endcomment %}
+    <p>First Skill: {{skill.0}}</p>
+    <p>Skill: {{skill}}</p>
+    <p>user Name: {{user.name}}</p>
+    <p>user Age: {{user.age}}</p>
+    <p>blog Title: {{blog.title}}</p>
+    {% comment %} <p>blog Title: {{blog.content}}</p> {% endcomment %}
+    <p>blog Content: {{blog.Content|safe}}</p>
+    <p>blog Date: {{blog.created_at}}</p>
+
+
+    <p>Empty Value: {{empty_value|default:"no value provided"}}</p>
+    <p>Empty Value: {{empty_value|default_if_none:"no value provided"}}</p>
+{% comment %} {% endfor %} {% endcomment %}
+{% endblock  %}

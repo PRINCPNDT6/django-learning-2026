@@ -9,4 +9,8 @@
 Name: {{detail.name}} 
 <br>
 Email: {{detail.email}}
+{{detail.id}}
+<a href="{% url "book_Order" detail.id %}">
+    <button>Book Now{{detail.id}}</button>
+</a>
 {% endblock  %}
