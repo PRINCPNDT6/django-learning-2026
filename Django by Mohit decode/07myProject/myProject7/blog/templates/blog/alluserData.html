@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    all user data
+{% endblock  %}
+
+{% block content %}
+{% for data in allData %}
+    <h2>ID: {{data.id}}</h2>
+    <h2>User Name: {{data.username}}</h2>
+    <h2>User Password: {{data.password}}</h2> 
+    <a href=" {% url "edit_user" data.id%} ">
+        <button>Edit</button>
+    </a>
+    <a href="{% url "profile" data.id %}">
+        <button>See Profile</button>
+    </a>
+{% endfor %}
+{% endblock  %}

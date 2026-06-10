@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name: {{ stu_details.name }} <br>
+    Age: {{ stu_details.age }} <br>
+    City: {{ stu_details.city }} <br>
+    Roll No: {{ stu_details.roll_no }} <br>
+    Course: {{ stu_details.Course }} <br>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+     <a href="{% url "stu_feedback" stu_details.id%}"><button>Feedback</button></a>
+     <button>select This Student </button>
+      
+    <hr>
+    <br>
+    <h1>Reviews</h1>
+    {% for review in stu_details.reviews.all %}
+    User: {{ review.name }} <br>
+        {% comment %} <p>Feedback: {{ review.feedback}}</p> {% endcomment %}
+        <p>Review Text: {{ review.review_text }}</p>
+        <p>Rating: {{ review.rating }}</p>
+        <hr>
+    {% empty %}
+        <p>No reviews available.</p>
+    {% endfor %}
+    
+
+</body>
+</html>

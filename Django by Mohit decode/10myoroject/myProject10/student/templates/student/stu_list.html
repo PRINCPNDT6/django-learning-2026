@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Student Data</h1>
+    <a href="{% url "student_create" %}">Add new Student</a>
+    <ul>
+
+        {% for s in  students%}
+            <li>
+                <a href="{% url "stu_details" s.id%}">{{s.name}} - {{s.email}}</a>
+                <a href="{% url "edit_stu" s.id%}"><button>Edit Details</button></a> 
+                <a href="{% url "stu_del" s.id%}"><button>Delete</button></a> 
+
+            </li>
+            <br>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
